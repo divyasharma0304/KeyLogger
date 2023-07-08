@@ -1,1 +1,1 @@
-Key.shift'i'Key.space'a''m'Key.spaceKey.shift'd''i''v''y''a''.'Key.enter
+'K'Key.shift'e''y''l''o''g''g''e''r'Key.space'p''r''o''g''r''a''m'Key.enter
