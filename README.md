@@ -40,6 +40,10 @@ python Keylogger.py
 
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please open an issue or submit a pull request on the GitHub repository: (https://github.com/divyasharma0304/KeyLogger)
 
+## License
+
+This project is licensed under the  [MIT License](LICENSE).
+
 ## Disclaimer
 
 This project is for educational purposes only.
