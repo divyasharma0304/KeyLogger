@@ -16,17 +16,17 @@ You also need to install the following libraries:
 You can install the required libraries using pip, the Python package installer. Open a terminal or command prompt and run the following command:
 
 ```
-pip install customtkinter pynput
+pip install tkinter customtkinter pynput
 ```
 
 ## Usage
 
-1. Clone or download the project files to your local machine.
+1. Clone or download the project files from the GitHub repository: (https://github.com/divyasharma0304/KeyLogger)
 2. Open a terminal or command prompt and navigate to the project directory.
 3. Run the following command to start the keylogger:
 
 ```
-python keylogger.py
+python Keylogger.py
 ```
 
 1. The GUI window will appear with a "Start" button.
@@ -38,7 +38,7 @@ python keylogger.py
 
 ## Contributing
 
-Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please open an issue or submit a pull request on the GitHub repository.
+Contributions are welcome! If you have any suggestions, improvements, or bug fixes, please open an issue or submit a pull request on the GitHub repository: (https://github.com/divyasharma0304/KeyLogger)
 
 ## Disclaimer
 
